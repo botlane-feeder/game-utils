@@ -1,0 +1,1 @@
+export type CoundownTriggers={start:boolean, pause:boolean, reset:boolean};
