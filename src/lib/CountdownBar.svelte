@@ -1,6 +1,6 @@
 <script lang="ts">
-  // import type { CoundownTriggers } from "$lib/types";
-  type CoundownTriggers={start:boolean, pause:boolean, reset:boolean};
+  import type { CoundownTriggers } from "$lib/types.ts";
+  // type CoundownTriggers={start:boolean, pause:boolean, reset:boolean};
 
   interface P{
     triggers:CoundownTriggers,

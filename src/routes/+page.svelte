@@ -59,7 +59,7 @@
     justify-content: center;
   }
   .container > div{
-    width: calc(100%-20px);
+    width: calc(100% - 20px);
     padding: 5px 10px;
     display: grid;
     grid-template-columns: 3fr 1fr;
