@@ -1,9 +1,15 @@
 <script lang="ts">
   import CountdownBar from "$lib/CountdownBar.svelte";
+  import CountdownTime from "$lib/CountdownTime.svelte";
 
   let CountdownBarData = $state({
     triggers:{start:false, pause:false, reset:false},
     times:{duration:3000, remaining:0},
+    end:false
+  });
+  let CountdownTimeData = $state({
+    triggers:{start:false, pause:false, reset:false},
+    duration: 10,
     end:false
   });
 </script>
@@ -46,7 +52,34 @@
     </div>
   </div>
   <h3>CountdownTime</h3>
-  <div>WIP</div>
+  <div class= CountdowTime>
+    <CountdownTime bind:triggers={CountdownTimeData["triggers"]} duration={CountdownTimeData["duration"]} bind:end={CountdownTimeData["end"]}/>
+    <div class="settings">
+      <div>
+        <label for="start">Start Countdown</label>
+        <input type="checkbox" name="start" bind:checked={CountdownTimeData["triggers"]["start"]}>
+      </div>
+      <div>
+        <label for="start">Pause Countdown</label>
+        <input type="checkbox" name="start" bind:checked={CountdownTimeData["triggers"]["pause"]}>
+      </div>
+      <div>
+        <label for="start">Reset Countdown</label>
+        <input type="checkbox" name="start" bind:checked={CountdownTimeData["triggers"]["reset"]}>
+      </div>
+      <div><span class="settingTitle">Times :</span>
+        <div>
+          <label for="duration">Duration</label>
+          <input type="number" bind:value={CountdownTimeData["duration"]}>
+        </div>
+      </div>
+      <div><span class="settingTitle">End :</span>
+        <div>
+          <input type="checkbox" name="start" checked={CountdownTimeData["end"]} disabled>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
